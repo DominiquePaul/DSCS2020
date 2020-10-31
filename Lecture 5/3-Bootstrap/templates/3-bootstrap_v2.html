@@ -1,0 +1,84 @@
+<!--
+
+Contrasting this to last file, we changed the following:
+
+  1. We added the class tag "container" to larger section
+
+  2. We added the class tag "img-thumbnail" to the image tags
+
+  3. We added a div with the tag "row" that groups all cards together
+
+  4. We added the class tag "col-sm" for all divs that contain the individual
+    cards
+
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+
+    <div class="Overview text container">
+
+      <h1>Styles</h1>
+      <p>The HTML style attribute is used to add styles to an element, such as color, font, size, and more.</p>
+
+      <h2>There are three ways of selecting a html tag</h2>
+
+      <ol>
+        <li>The element selector: selects html elements based on the tag</li>
+        <li>The Class Selector: Selects elements with a specific class attribute that is
+            set in the tag</li>
+        <li>The ID selector: They select a html with a specific id attribute that is set
+            in the tag</li>
+      </ol>
+
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1 id="TeamTitle">Our Team </h1>
+
+        <div class="row">
+    <!-- <div class="card-toverview"> -->
+
+          <div class="col-sm">
+            <img class="avatars img-thumbnail" src="https://image.flaticon.com/icons/png/512/194/194938.png" alt="Avatar">
+            <div>
+              <h4><b>Sandra Phillips</b></h4>
+              <p>Chief Scientist & CEO</p>
+            </div>
+          </div>
+
+          <div class="col-sm">
+            <img class="avatars img-thumbnail" src="https://www.flaticon.com/svg/static/icons/svg/147/147144.svg" alt="Avatar">
+            <div>
+              <h4><b>John Stewart</b></h4>
+              <p>Marketing</p>
+            </div>
+          </div>
+
+          <div class="col-sm">
+            <img class="avatars img-thumbnail" src="https://cdn.iconscout.com/icon/free/png-512/avatar-373-456325.png" alt="Avatar">
+            <div>
+              <h4><b>Janette Williams</b></h4>
+              <p>Finance</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+  </body>
+</html>

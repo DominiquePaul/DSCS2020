@@ -1,0 +1,27 @@
+
+
+/*
+A basic css style is made up out of:
+
+1. A Selector that selects to the html element you want to style
+     (e.g. p, h1, .myclass, #my_id)
+
+2. A declaration, which in turn is made out of:
+  2.1 a property (e.g. color, margin)
+  2.2 a property value  (e.g. green, 100px, #ffffff)
+
+
+Each css declaration has to finish with a semicolon (;)
+ */
+
+
+ p {
+  color: blue;
+  font-size: 20px;
+ }
+
+ 
+ body {
+  font-family: Helvetica, sans-serif;
+  color: tomato;
+ }

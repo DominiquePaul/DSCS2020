@@ -1,0 +1,134 @@
+
+
+/*
+A basic css style is made up out of:
+
+1. A Selector that selects to the html element you want to style
+     (e.g. p, h1, .myclass, #my_id)
+
+2. A declaration, which in turn is made out of:
+  2.1 a property (e.g. color, margin)
+  2.2 a property value  (e.g. green, 100px, #ffffff)
+
+
+Each css declaration has to finish with a semicolon (;)
+ */
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+
+p {
+ color: blue;
+ font-size: 12px;
+}
+
+
+
+
+/*
+There are three ways of selecting a html tag
+
+1. The element selector: selects html elements based on the tag
+*/
+
+body {
+ font-family: Arial, sans-serif;
+}
+
+li {
+ margin-top: 10px;
+}
+
+
+/*
+2. The Class Selector: Selects elements with a specific class attribute that is
+  set in the tag: e.g.
+
+    <h2 class='product_card_heading'> heading text </h2>
+
+    <div class='website_section'> [...] </div>
+
+  One tag can also have multiple tags
+
+    <div class="gallery landing_page fancy_style"
+
+  Class selectors is generally used for groups of items that not necessarily
+  spacially grouped on the page, but which do follow the same styling rules.
+
+  Classes are referenced by stating the class, preceded by a dot
+*/
+.avatars {
+  width: 150px;
+}
+
+.card {
+  display: inline-block;
+  margin: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid green;
+}
+
+.card-overview {
+  text-align: center;
+}
+
+
+/*
+3. The ID selector: They select a html with a specific id attribute that is set
+  in the tag:
+
+    <img id='navigation_bar_icon'>
+    <h1 id='landing_page_header'> heading text </h1>
+
+  IDs are generally used for single items on a website and not for groups. To a
+  certain degree, this makes them similar to classes, even though the two are
+  different.
+
+  IDs are referenced by stating the id, preceded by a hashtag:
+*/
+#TeamTitle {
+  text-align: center;
+  margin: auto;
+}
+
+
+
+
+/*
+You can group different tags together if they have the same rules. This not only
+  saves you time but makes your css easier to read for others
+
+instead of this:
+*/
+
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+p {
+  text-align: center;
+  color: red;
+  font-size: 14px;
+}
+
+/*
+You could do this
+*/
+
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+p {
+  font-size: 14px;
+}

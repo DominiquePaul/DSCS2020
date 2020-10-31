@@ -1,0 +1,17 @@
+<h1>Welcome to the {{ company }}</h1>
+
+<form method="POST">
+  <!-- the hidden tag field is an extra form field that is hidden but is used
+  by flask wtf to encrypt the data being entered -->
+  {{ form.hidden_tag() }}
+
+  <!-- We specify the question to be rendered and the form field for input -->
+  {{ form.name.label }} {{ form.name() }}
+  <br>
+  {{ form.email.label }} {{ form.email() }}
+  <br>
+  {{ form.hour.label }} {{ form.hour() }}
+  <br><br>
+  <!-- lastly we have our button to submit the form -->
+  {{ form.submit() }}
+</form>

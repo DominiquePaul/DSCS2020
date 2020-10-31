@@ -1,0 +1,11 @@
+<h1>Showroom</h1>
+{% for index, row in products_df.iterrows() %}
+
+  <div class="card">
+    <h3>Product No. {{ index+1 }}:</h3>
+    <p>{{ row['name'] }}</p>
+    <p>{{ row['description'] }}</p>
+    <p>{{ row['price'] }} CHF</p>
+  </div>
+
+{% endfor %}

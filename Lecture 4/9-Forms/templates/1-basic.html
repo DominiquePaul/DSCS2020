@@ -1,0 +1,12 @@
+<h1>Welcome to the {{ company }}</h1>
+<h4>You are being served by {{ employees[0] }}</h4>
+
+<h2>Menu</h2>
+{% if hour_of_day > 11 %}
+  <p>hour_of_day </p>
+  {% for product, price in products.items() %}
+    <p>{{ product }}: {{ price }} CHF </p>
+  {% endfor %}
+{% else %}
+  <p>The bar is currently closed, please come back during our opening hours</p>
+{% endif %}

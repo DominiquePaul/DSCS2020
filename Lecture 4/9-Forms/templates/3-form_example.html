@@ -1,0 +1,12 @@
+<h1>Basic form example</h1>
+
+<p>{{ name  }} is {{ age  }} years old</p>
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.name.label }} {{ form.name() }}
+  <br>
+  {{ form.age.label }} {{ form.age() }}
+  <br><br>
+  {{ form.submit() }}
+</form>

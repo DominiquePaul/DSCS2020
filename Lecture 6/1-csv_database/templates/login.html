@@ -1,0 +1,10 @@
+<form  method="post">
+  {{ form.hidden_tag() }}
+  
+  {{ form.email.label }} {{ form.email() }}
+  <br>
+  {{ form.password.label }} {{ form.password() }}
+
+  {{ form.submit_button() }}
+
+</form>

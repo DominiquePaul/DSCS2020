@@ -1,0 +1,64 @@
+"""
+Things to consider when using file uploads
+
+    1. Use FileField, imported from flask_wtf (not wtforms)
+
+    2. Ideally, specify a folder where you want files uploaded to
+
+    3. In your formtag in your html file, set enctype="multipart/form-data".
+        This format is required when at least one of the fields in the form is
+        a file field.
+
+Further reading for working with file uploads
+https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask
+"""
+
+import os
+from flask import Flask, render_template, redirect, url_for
+
+from wtforms import SubmitField
+from wtforms.validators import DataRequired
+
+from flask_wtf import Form
+from flask_wtf.file import FileField
+
+app = Flask(__name__)
+app.config["SECRET_KEY"] = "enter-a-hard-to-guess-string"
+
+
+class FileUpload(Form):
+    user_file = FileField("Your Data", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+
+    form = FileUpload()
+
+    if form.validate_on_submit():
+
+        # read the file content
+        assets_dir = "static/assets"
+
+        d = form.user_file.data
+
+        filename = d.filename
+
+        d.save(os.path.join(assets_dir, filename))
+
+        return redirect(url_for("show_image", filename=filename))
+
+    return render_template("index.html", form=form)
+
+
+@app.route('/image/<filename>')
+def show_image(filename):
+
+    file_path_in_static = os.path.join("assets", filename)
+
+    return render_template("show_image.html", img_name=file_path_in_static)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

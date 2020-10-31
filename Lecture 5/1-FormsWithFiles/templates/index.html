@@ -1,0 +1,9 @@
+<h1>Working with files</h1>
+<form method="post" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+
+  {{ form.user_file.label }} {{ form.user_file() }}
+  <br>
+  {{ form.submit() }}
+
+</form>
