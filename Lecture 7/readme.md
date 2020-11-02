@@ -2,30 +2,30 @@
 
 ## Content
 1. Introduction to Git
-  1. Add, Commit and Push
-  1. Solving a git conflict
-  1. Markdown
-  1. Ex. 1.1: Creating your first git repository
+    1. Add, Commit and Push
+    1. Solving a git conflict
+    1. Markdown
+    1. Ex. 1.1: Creating your first git repository
 1. GCP Platform Overview
-  1. Platform overview
-  1. Product Category Overview
-  1. Billing Alerts
+    1. Platform overview
+    1. Product Category Overview
+    1. Billing Alerts
 1. Starting your first server
-  1. Launching a server
-  1. Connecting to your server
-  1. Running a naked Flask app on a bare server (not recommended)
-  1. Ex. 1: Run a basic flask app on a server
-  1. Firewalls and networking
-  1. Managing pip packages and virtual environments
-  1. Running a Flask App on a server with docker
+    1. Launching a server
+    1. Connecting to your server
+    1. Running a naked Flask app on a bare server (not recommended)
+    1. Ex. 1: Run a basic flask app on a server
+    1. Firewalls and networking
+    1. Managing pip packages and virtual environments
+    1. Running a Flask App on a server with docker
 1. Networking and Security
-  1. Connecting to your server from your desktop
-    1. via ssh
-    1. via gcloud
-  1. Copying files to your server
+    1. Connecting to your server from your desktop
+        1. via ssh
+        1. via gcloud
+        1. Copying files to your server
 1. Google App Engine
-  1. Overview
-  1. Testing load compared
+    1. Overview
+    1. Testing load compared
 1. Guest Lecture Humberto
 
 
@@ -79,7 +79,7 @@ Here is an example of what you can do, the following markdown text...
 1. Ordered lists use numbers
 1. but it doesn't matter which ones you use
 1. Mardown infers the order
-  1. and also works with indentation
+    1. and also works with indentation
 
 You can also use html elements:
 <img href="https://holidaystoswitzerland.com/wp-content/uploads/2019/10/St-Gallen-Switzerland-800x599.jpg">
@@ -149,6 +149,7 @@ This course uses GCP. All links refer to the respective website for GCP, but oth
 
 
 Also have a look at the video below for a general overview. The only additional aspect not in it is the overview of the console, when you log in.
+
 [![Video on useful links](http://img.youtube.com/vi/VyZNJ7TlaWY/0.jpg)](http://www.youtube.com/watch?v=VyZNJ7TlaWY "Video on useful links")
 
 
