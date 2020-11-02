@@ -105,7 +105,7 @@ Emojis also work :tada:
   1. and also works with indentation
 
 You can also use html elements:
-<img href="https://holidaystoswitzerland.com/wp-content/uploads/2019/10/St-Gallen-Switzerland-800x599.jpg">
+<img src="https://holidaystoswitzerland.com/wp-content/uploads/2019/10/St-Gallen-Switzerland-800x599.jpg">
 
 Emojis also work :tada:
 
@@ -221,13 +221,28 @@ Remember that GCP provides us with servers in the most bare format. This means t
 
 The ubuntu version that we get does not necessarily have to be the latest version. Newer versions might contain updates making the server faster or securer. We can update to the newest version by running two commands
 <br>
-`sudo get update` - downloads the updates <br>
+`sudo apt-get update` - downloads the updates <br>
 `sudo apt update` - installs the updates
 
 We can also combine two commands in the command line using "&&" like this: <br>
 `sudo apt-get update && sudo apt update`
 
 Updating your server when you start it isn't necessary, but its a good habit.
+
+### Upgrading to Python 3.8 on Ubuntu
+To upgrade Python run these commands
+
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+sudo apt update
+
+sudo apt install python3.8
+
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
+```
+
+To use Python 3.8 as the default python3, run commands:
 
 
 #### Installing pip
@@ -391,6 +406,7 @@ See the file `start-up-script.sh` for an example of what such a file could look 
 
 <img src="https://jirasupport.files.wordpress.com/2019/10/docker_logo.png" alt="docker" width="200" align="right"/>
 
+
 ### Docker
 
 Docker is a set of platform as a service products that use virtualisation to package your applications as so-called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files.
@@ -458,7 +474,7 @@ You can also copy files from your server to your local file system:
 
 To see all servers
 
-`gcloud compute instances list`
+`gcloud compute instances list`
 
 Delete a server
 
