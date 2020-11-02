@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  application1:
+    restart: always
+    build: ./app1
+    ports:
+      - 5000:5000
+    command: "python3 application.py"
+
+  application2:
+    restart: always
+    build: ./app2
+    env_file:
+      - secrets_example.env
+    ports:
+      - 80:5000
+    command: "python3 main.py"
