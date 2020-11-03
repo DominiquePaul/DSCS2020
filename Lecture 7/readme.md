@@ -5,7 +5,7 @@
     1. Add, Commit and Push
     1. Solving a git conflict
     1. Markdown
-    1. Ex. 1.1: Creating your first git repository
+    1. Exercise 1: Creating your first git repository
 1. GCP Platform Overview
     1. Platform overview
     1. Product Category Overview
@@ -14,18 +14,12 @@
     1. Launching a server
     1. Connecting to your server
     1. Running a naked Flask app on a bare server (not recommended)
-    1. Ex. 1: Run a basic flask app on a server
     1. Firewalls and networking
+    1. Exercise 2: Run a basic flask app on a server
     1. Managing pip packages and virtual environments
-    1. Running a Flask App on a server with docker
-1. Networking and Security
-    1. Connecting to your server from your desktop
-        1. via ssh
-        1. via gcloud
-        1. Copying files to your server
-1. Google App Engine
-    1. Overview
-    1. Testing load compared
+1. Connecting to your server from your desktop
+    1. Connecting via ssh
+    1. Copying files to your server via scp
 1. Guest Lecture Humberto
 
 
@@ -239,10 +233,9 @@ sudo apt update
 
 sudo apt install python3.8
 
+# to use python3.8 as the default run
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
 ```
-
-To use Python 3.8 as the default python3, run commands:
 
 
 #### Installing pip
@@ -405,127 +398,3 @@ You can add the start-up script via copy paste by opening the toggle menu "Manag
 See the file `start-up-script.sh` for an example of what such a file could look like
 
 <img src="https://jirasupport.files.wordpress.com/2019/10/docker_logo.png" alt="docker" width="200" align="right"/>
-
-
-### Docker
-
-Docker is a set of platform as a service products that use virtualisation to package your applications as so-called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files.
-
-What I like especially about docker is that its very simple to run multiple flask apps without having to launch a new server for each one. Especially if some apps are inactive most of the time.
-
-See Docker example in Code folder
-
-![docker v. virtualisation](https://about.gitlab.com/images/blogimages/containers-vm-bare-metal.png)
-
-
-#### Further resources on Docker
-* [Docker homepage](http://docker.com/)
-* [How To Build and Deploy a Flask Application Using Docker on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-18-04)
-* [Dockerize your flask application](https://runnable.com/docker/python/dockerize-your-flask-application)
-* [Get started with docker compose and flask](https://docs.docker.com/compose/gettingstarted/)
-
-
-## The Cloud Software Development Kit (SDK) / gcloud
-
-### Installation instructions
-Download the cloud SDK here: https://cloud.google.com/sdk/docs/quickstart
-
-1. Place the file in a higher-level folder on your computer
-1. Unzip the file
-1. Open your terminal and open the folder you placed the file in
-1. Run `./google-cloud-sdk/install.sh`, you will be prompted with some questions.
-  1. When asked whether you want to update your $PATH and enable shell command completion respond with yes
-  1. When asked about a path to an rc file then just hit enter to accept the default unless you have any special configurations that you did yourself. I assume you know what you're doing then anyways.
-1. Close and open the terminal once the installation finishes for the effects to take place
-1. In the new shell enter `gcloud init`
-1. Authenticate in the browser
-1. Pick the project you have set up for the course
-1. Select a default region. You can look up the regions [here](https://cloud.google.com/compute/docs/regions-zones), I like to choose europe-west-1-b in Belgium as it tends to be cheap and is fairely close to where I am
-
-
-### Some useful commands
-
-#### Create a new server
-We can create a new server using the command line like this now:
-
-`gcloud compute instances create myserver --machine-type=e2-medium --image=ubuntu-1604-xenial-v20201014`
-
-The more abstract format of this is
-
-`gcloud compute instances create <your-server-name> --machine-type=<server-size> --image=<image-type>`
-
-This command looks quite complicated, so you often will rather want to use the web interface. There, you can also always access what the web interface would look like as a gcloud command. Look at the very bottom for "Equivalent REST or command line"
-
-One convenient use case is ssh-ing into a server using the gcloud command line
-
-`gcloud compute ssh <server-name>`
-
-or scp files there
-
-`gcloud compute scp <file-name> <instance-name>:`
-
-for recursive files
-
-`gcloud compute scp --recurse <folder-name> <instance-name>:`
-
-You can also copy files from your server to your local file system:
-
-`gcloud compute scp <instance-name>:<file-path> <local-file-path>`
-
-To see all servers
-
-`gcloud compute instances list`
-
-Delete a server
-
-`gcloud compute instances delete <instance-name>`
-
-We will cover other commands as we get familiar with othe products
-
-### Exercise 3: Using the cloud sdk
-- Install the cloud sdk and set it up
-- Create a new server and ssh into it to make sure that everything works
-- Exit the server and send a folder with an app of your choice to the server using gcloud and send one of your previous flask apps to the server via gcloud and scp
-- Run the app on the server (you might need to install some pip packages)
-- Send a file from the server back to your local computer
-- Delete the instance
-
-
-## App Engine
-
-Launching servers isn't necessarily hard, but can involve quite a few steps. This can be alright, but sometimes we just want to make our app run as quick as possible. Also, one scenario we have not considered yet is what happens when we get a lot of users / traffic and we need to scale our infrastructure.
-
-Google App engine offers a convenient solution to run python applications without having to worry about any server updates, installations or firewall rules.
-
-App engine gives you two options to run your application "standard" and "flexible". The differences are quite technical, but essentially its about how the applications are run. If you are interested you can read up on the details [here](https://cloud.google.com/appengine/docs/the-appengine-environments). Generally, the flexible version gives us a bit more flexibility so we will be using it in this course.
-
-Your app needs to contain (1) a .yaml file and (2) a requirements.txt file
-
-### The .yaml file
-
-The yaml file contains the configurations of your python app such as the CPU, memory and scaling configurations. I have included two example configurations in the Code folder. The basic configuration is configured to a low limit just for experimenting with the service. The normal configuration is what you would deploy the app in production with, this is configured to automatically scale the servers if the app gets more traffic
-
-### Deploying the app
-
-To deploy the app simply run
-
-`gcloud app deploy <yaml-file>`
-
-This can take some time. Until the app has been deployed you can not re-deploy it. To view the list of past operations you can run
-
-`gcloud app operations list`
-
-To open your app in a browser once it has deployed run
-
-`gcloud app browse`
-
-Per default traffic is permitted from all sources. You can view the firewall rule(s) by running:
-
-`gcloud app firewall-rules list`
-
-
-
-#### Additional resources on app Engine
-[App Engine documentation](https://cloud.google.com/sdk/gcloud/reference/app)
-[App Engine standard v. flexible](https://cloud.google.com/appengine/docs/the-appengine-environments)
-[More App Engine tutorials](https://cloud.google.com/appengine/docs/flexible/python/how-to)
