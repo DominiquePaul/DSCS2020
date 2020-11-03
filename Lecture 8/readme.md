@@ -2,9 +2,8 @@
 
 ## Content
 
-1. Gunicorn
-1. Short overview of Docker
 1. Cloud SDK
+
 1. App Engine
     1. Overview
     1. Exercise: Deploy your own app with App Engine
@@ -17,26 +16,9 @@
     1. Training
     1. Calling your API
     1. Exercise: train your own algorithm and query it with Python
+  1. Short overview of Docker
 1. Guest Lecture Stephan Schulze
 
-
-
-### Docker
-
-Docker is a set of platform as a service products that use virtualisation to package your applications as so-called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files.
-
-What I like especially about docker is that its very simple to run multiple flask apps without having to launch a new server for each one. Especially if some apps are inactive most of the time.
-
-See Docker example in Code folder
-
-![docker v. virtualisation](https://about.gitlab.com/images/blogimages/containers-vm-bare-metal.png)
-
-
-#### Further resources on Docker
-* [Docker homepage](http://docker.com/)
-* [How To Build and Deploy a Flask Application Using Docker on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-18-04)
-* [Dockerize your flask application](https://runnable.com/docker/python/dockerize-your-flask-application)
-* [Get started with docker compose and flask](https://docs.docker.com/compose/gettingstarted/)
 
 
 ## The Cloud Software Development Kit (SDK) / gcloud
@@ -227,10 +209,31 @@ Exercise to do at home:
 1. Choose "Select a CSV file on Cloud Storage"
 1. Click on browse, select your csv file and then continue
 1. GCP will now import the images. This may take a bit time
+1. When the improt is ready, click on Train and then on "start training". Give your model a name and keep "cloud hosted" selected
 
 
 ### Exercise
 Create your own image classifier with AutoML and query it as an API with Python
+
+
+
+### Docker
+
+Docker is a set of platform as a service products that use virtualisation to package your applications as so-called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files.
+
+What I like especially about docker is that its very simple to run multiple flask apps without having to launch a new server for each one. Especially if some apps are inactive most of the time.
+
+See Docker example in Code folder
+
+![docker v. virtualisation](https://about.gitlab.com/images/blogimages/containers-vm-bare-metal.png)
+
+
+#### Further resources on Docker
+* [Docker homepage](http://docker.com/)
+* [How To Build and Deploy a Flask Application Using Docker on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-18-04)
+* [Dockerize your flask application](https://runnable.com/docker/python/dockerize-your-flask-application)
+* [Get started with docker compose and flask](https://docs.docker.com/compose/gettingstarted/)
+
 
 
 ## Guest Lecture Stephan Schulze
