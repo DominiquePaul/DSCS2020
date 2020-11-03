@@ -3,7 +3,6 @@
 ## Content
 
 1. Cloud SDK
-
 1. App Engine
     1. Overview
     1. Exercise: Deploy your own app with App Engine
@@ -209,7 +208,10 @@ Exercise to do at home:
 1. Choose "Select a CSV file on Cloud Storage"
 1. Click on browse, select your csv file and then continue
 1. GCP will now import the images. This may take a bit time
-1. When the improt is ready, click on Train and then on "start training". Give your model a name and keep "cloud hosted" selected
+1. When the import is ready, click on Train and then on "start training". Give your model a name and keep "cloud hosted" selected
+1. Click on "models" in the AutoML menu on the left.
+1. Click on your model. You can view some statistics on how the training went. When you're done inspecting the metrics go to "Test % Use" and deploy the model
+1.
 
 
 ### Exercise
