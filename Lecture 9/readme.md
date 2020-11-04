@@ -2,29 +2,23 @@
 
 ## Content
 
-1. Setting up a SQL Database in GCP
-    1. Creating the SQL instance
-    1. Connecting with Python and SQL Alchemy
-1. BigQuery
-1. SQL query language
-    1. Basic queries
-    1. Where statements
-    1. Joins
-    1. Exercise: running SQL like queries on BigQuery
-1. DataStudio
-    1. Intro to DataStudio
-    1. Exercise: Connecting SQL and BigQuery
 1. Cloud Storage
     1. Overview
     1. Adding files via gcloud command line
     1. Adding files with python
     1. Saving file paths in SQL
-1. Some comments about the projects
+1. Setting up a SQL Database in GCP
+    1. Creating the SQL instance
+    1. Connecting with Python and SQL Alchemy
 
-## Extra content to cover if we have time
-1. Qwiklabs
-1. Cron Jobs
-1. Running a Jupyter notebook on a GCP Server
+1. SQL query language & BigQuery
+    1. Basic queries
+    1. Exercise: Qwiklabs
+1. DataStudio
+    1. Intro to DataStudio
+    1. Exercise: Connecting SQL and BigQuery
+
+1. Some comments about the projects
 
 
 
@@ -138,3 +132,7 @@ https://www.qwiklabs.com/focuses/2802?parent=catalog
 
 * [W3 Schools SQL Tutorial](https://www.w3schools.com/sql/sql_intro.asp)
 * [Learn SQL](https://sqlzoo.net/wiki/SELECT_basics)
+
+
+## Qwiklabs
+https://www.qwiklabs.com/focuses/3563?parent=catalogt
