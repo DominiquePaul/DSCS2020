@@ -14,7 +14,7 @@ engine = create_engine(connection_string)
 
 # we read in the data and send it to the sql database
 df = pd.read_csv("data/tamimimarkets.csv")
-df.to_sql("tamimimarkets", engine, if_exists="replace")
+df.to_sql("tamimimarkets", engine)
 
 
 df.columns = [x.lower() for x in df.columns]
@@ -28,7 +28,7 @@ df.to_sql("tamimimarkets", engine, if_exists="replace")
 tamimi = pd.read_sql("tamimimarkets", engine)
 
 
-# and also run sql commands
+# We can also run sql commands
 query1 = """
 select *
 from tamimimarkets

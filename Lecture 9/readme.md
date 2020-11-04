@@ -138,8 +138,3 @@ https://www.qwiklabs.com/focuses/2802?parent=catalog
 
 * [W3 Schools SQL Tutorial](https://www.w3schools.com/sql/sql_intro.asp)
 * [Learn SQL](https://sqlzoo.net/wiki/SELECT_basics)
-
-## Qwiklabs
-https://www.qwiklabs.com/focuses/3563?parent=catalog
-
-## DataStudio
