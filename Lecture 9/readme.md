@@ -10,14 +10,12 @@
 1. Setting up a SQL Database in GCP
     1. Creating the SQL instance
     1. Connecting with Python and SQL Alchemy
-
 1. SQL query language & BigQuery
     1. Basic queries
     1. Exercise: Qwiklabs
 1. DataStudio
     1. Intro to DataStudio
     1. Exercise: Connecting SQL and BigQuery
-
 1. Some comments about the projects
 
 
@@ -47,6 +45,12 @@ Read more in the documentation:
 * https://googleapis.dev/python/storage/latest/buckets.html
 
 
+
+### Exercise: working with cloud storage
+- Create a a new bucket and inspect the bucket object using `dir()`
+- Upload files yourself in a separate file, without copy paste
+- Take a simple flask app from lecture 5 where we save a file to disk and integrate uploading it. Verify by looking at the bucket
+- If you have time, also try accessing the image on a page via the public url
 
 ## Cloud SQL - Running a SQL database on GCP
 

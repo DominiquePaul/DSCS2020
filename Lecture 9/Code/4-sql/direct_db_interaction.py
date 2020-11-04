@@ -16,6 +16,10 @@ engine = create_engine(connection_string)
 df = pd.read_csv("data/tamimimarkets.csv")
 df.to_sql("tamimimarkets", engine)
 
+# Same for the avocado dataset
+df = pd.read_csv("data/avocado.csv")
+df.to_sql("avocado", engine, if_exists="replace")
+
 
 df.columns = [x.lower() for x in df.columns]
 # we can determine what to do if a database exists

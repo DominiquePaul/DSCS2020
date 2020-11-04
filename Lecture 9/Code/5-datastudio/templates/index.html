@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Ascet Fashion</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href={{ url_for("index") }}>Tamimi Store </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href={{ url_for("index") }}>Analytics</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <br>
+      <h2>Overview of Sales</h2>
+      <br>
+      <iframe width="1200" height="1600" src="https://datastudio.google.com/embed/reporting/87f46756-3699-4ebe-97fe-e6f9d9e36dfd/page/YnInB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    </div>
+
+  </body>
+</html>

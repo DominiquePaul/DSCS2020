@@ -1,17 +1,3 @@
-"""
-Things to consider when using file uploads
-
-    1. Use FileField, imported from flask_wtf (not wtforms)
-
-    2. Ideally, specify a folder where you want files uploaded to
-
-    3. In your formtag in your html file, set enctype="multipart/form-data".
-        This format is required when at least one of the fields in the form is
-        a file field.
-
-Further reading for working with file uploads
-https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask
-"""
 
 import os
 from flask import Flask, render_template, redirect, url_for
@@ -46,6 +32,8 @@ def index():
         filename = d.filename
 
         d.save(os.path.join(assets_dir, filename))
+
+
 
         return redirect(url_for("show_image", filename=filename))
 

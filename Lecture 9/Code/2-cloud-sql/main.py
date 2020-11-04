@@ -11,10 +11,6 @@ from flask_login import logout_user, login_required
 
 from forms import RegistrationForm, LoginForm, PostForm
 
-# changes to work with cloud sql
-from google.cloud import storage
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../gcp_credentials/dscs2020-b20a630b58a2.json"
-
 from secrets import SQL_PASSWORD, SQL_PUBLIC_IP, SQL_DATABASE_NAME
 
 app = Flask(__name__)
@@ -27,6 +23,7 @@ DBNAME = SQL_DATABASE_NAME
 
 # configuration
 app.config["SECRET_KEY"] = "A2BD87117A791E89"
+
 #  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db' # --> old connection string
 app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
@@ -229,4 +226,4 @@ def get_products():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

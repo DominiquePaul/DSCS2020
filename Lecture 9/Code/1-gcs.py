@@ -17,7 +17,6 @@ ________________________
 Documentation for google cloud storage:
 https://cloud.google.com/storage/docs
 https://googleapis.dev/python/storage/latest/buckets.html
-
 """
 
 import os
@@ -39,15 +38,18 @@ buckets = storage_client.list_buckets()
 bucket_names = [bucket.name for bucket in buckets]
 bucket_names
 
+
 # create a bucket
 bucket_name = "bucket1"
 bucket = storage_client.create_bucket(bucket_name)  # doesn't work
 
 # Bucket names have to be unique
-bucket_name = "mynewbucket-dscs"
+bucket_name = "mynewbucket-dscs2"
 bucket = storage_client.create_bucket(bucket_name)
 
 dir(bucket)
+
+bucket.time_created
 
 bucket.location  # buckets are per default created in the US multiregion
 bucket.location_type
@@ -55,7 +57,7 @@ bucket.location_type
 # we can also create a bucket in a specific location
 # have a look at locations here
 # https://cloud.google.com/storage/docs/bucket-locations
-bucket_name = "mynewbucket-dscs-europe"
+bucket_name = "mynewbucket-dscs-europe2"
 location = "EUROPE-WEST1"
 bucket = storage_client.create_bucket(bucket_name, location=location)
 
@@ -64,7 +66,7 @@ bucket.location_type
 
 
 # get a single bucket by its name the bucket by name
-bucket_name = "mynewbucket-dscs"
+bucket_name = "mynewbucket-dscs-europe2"
 bucket = storage_client.bucket(bucket_name)
 
 
@@ -91,7 +93,7 @@ blob.upload_from_filename(source_file_name)
 
 
 # show all files in a bucket
-bucket_name = "mynewbucket-dscs"
+bucket_name = "mynewbucket-dscs-europe2"
 blobs = storage_client.list_blobs(bucket_name)
 file_names = [blob.name for blob in blobs]
 file_names
@@ -113,6 +115,7 @@ blob.make_private()
 
 # download the file
 blob.download_to_filename("../example_files/downloads/st_gallen.jpg")
+
 
 # We can also load a file into memory without saving it to the disk first
 myfile = blob.download_as_string()  # this loads the file as a bytes string
@@ -236,17 +239,16 @@ upload_file(bucket_name="mybucket-dscs",
 
 download_file(bucket_name="mybucket-dscs",
               source_blob_name="campus.jpg",
-              destination_file_name="../example_files/campus.jpg")
+              destination_file_name="../example_files/downloads/campus.jpg")
 
 
-create_bucket(bucket_name="mybucket-dscs2")
+create_bucket(bucket_name="mybucket-dscs3")
 
-delete_bucket(bucket_name="mybucket-dscs2")
+delete_bucket(bucket_name="mybucket-dscs3")
 
 # this does not work because the bucket is not empty
 delete_bucket(bucket_name="mybucket-dscs")
 
 # we can override this, but be careful as you might delete an important folder
 # with a lot of files by accident
-delete_bucket(bucket_name="mybucket-dscs",
-              force=True)
+delete_bucket(bucket_name="mybucket-dscs", force=True)

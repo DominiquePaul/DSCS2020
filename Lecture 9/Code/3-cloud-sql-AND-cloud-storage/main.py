@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 ###############################################################################
 # Google Cloud Storage settings
-GC_BUCKET_NAME = "ascet-fashion-showroom"
+GC_BUCKET_NAME = "ascet-fashion-showroom-inclass"
 
 # Google Cloud SQL settings
 PASSWORD = SQL_PASSWORD
@@ -221,7 +221,6 @@ def is_login_successful(form_data):
 def add_product(form_data):
 
     image_as_bytes = form_data.image_upload.data.read()
-    print(type(image_as_bytes), file=sys.stderr)
     file_name = form_data.item_name.data
 
     public_url = upload_bytes_to_gcs(bucket_name=GC_BUCKET_NAME,
@@ -270,4 +269,4 @@ def upload_bytes_to_gcs(bucket_name, bytes_data, destination_blob_name):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5002)
