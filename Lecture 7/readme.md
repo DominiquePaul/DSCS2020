@@ -370,7 +370,7 @@ The more abstract structure of the command is
 `scp -i <private-ssh-key> <file-to-send> <server-username>@<server-address>:<filepath-on-server>`
 
 To upload entire folders we can add an `-r` flag, which is short for recursive. The structure of the command then changes to
-`scp -i -r  <private-ssh-key> <folder-to-send> <server-username>@<server-address>:<filepath-on-server>`
+`scp -i <private-ssh-key> -r <folder-to-send> <server-username>@<server-address>:<filepath-on-server>`
 
 
 ### Exercise 1.3: SSH into a server from your local terminal and run one of your flask apps

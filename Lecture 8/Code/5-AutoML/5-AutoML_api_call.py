@@ -9,11 +9,9 @@ from google.cloud import automl
 
 project_id = "dscs2020"
 model_id = "ICN5998708941750534144"
-file_path = "../../Images/test_bananas/banana1.jpg"
+file_path = "../../Images/test_bananas/banana3.jpg"
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./gcp_credentials/dscs2020-b20a630b58a2.json"
-
-os.getcwdb()
 
 prediction_client = automl.PredictionServiceClient()
 
@@ -37,6 +35,7 @@ request = automl.PredictRequest(
     name=model_full_id,
     payload=payload
 )
+
 response = prediction_client.predict(request=request)
 
 print("Prediction results:")

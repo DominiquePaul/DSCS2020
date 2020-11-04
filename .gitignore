@@ -1,3 +1,9 @@
 .ipynb_checkpoints
 __pycache__
 .DS_Store
+secrets_example.env
+docker_key
+docker_key.pub
+dscs2020-b20a630b58a2.json
+Images
+secrets.py
