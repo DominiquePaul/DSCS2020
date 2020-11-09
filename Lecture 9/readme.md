@@ -176,4 +176,4 @@ IP addresses: https://support.google.com/datastudio/answer/7088031?hl=en) to the
 1. Your embedded report will only be viewable by people who are logged in with their google account and have access to your report. You can invite other people to the report by clicking "share" in the top right of your report in data studio. By clicking on "manage access" in the sharing pop-up, you can change the sharing settings to "anyone with the link can view" if you want your report to be generally accessible.
 1. (Optionally) Run your flask and see how the report looks. You may want to adjust the width and height. You can also just adjust one value (e.g. width) and delete the other (e.g. height) for the report to automatically maintain its aspect ratio
 
-Have a look at `Code/5-datastudio` to see how embedding can look like
+Have a look at `Code/5-datastudio` to see how embedding can look like. The dashboard
