@@ -1,7 +1,7 @@
 <img src="https://www.unisg.ch/-/media/93125423859d46928371a633b15cfcb1.jpg" alt="SIAW logo" width="200" align="right">
 
 # Data Science and Cloud Solutions 2020
-*by Dominique Paul* ()[dominique.paul@unisg.ch](mailto:dominique.paul@unisg.ch))
+*by Dominique Paul* ([dominique.paul@unisg.ch](mailto:dominique.paul@unisg.ch))
 
 ## About
 The goal of this course is to efficiently teach you how to build simple applications with Python, that can be made available to technical teams as an API as well as non-technical users via a web interface and making these available to the public or small groups of specific users. The idea of the course is not to make you a full-fletch professional in Python, but teach you the most important concepts that you need in 90% of all cases, while highlighting which areas are not covered in detail and providing resources to these. While some previous experience in programming is advantageous, the course is designed for students without any previous programming experience but is high-paced.

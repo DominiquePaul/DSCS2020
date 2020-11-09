@@ -204,8 +204,7 @@ General recommendations to save your credits in this course:
 **Some general recommendations:**
 * Choose a region that is close to where you are. Any Europe West server will generally do. Note that different regions are associated with different costs of the instance. Belgium and Finland generally tend to be cheaper regions.
 * Choose a small machine type. For our course e2-micro and e2-small are more than sufficient
-* The boot disk determines the operating system of your machine. Ubuntu generally is a good choice, but there are many good alternatives.
-
+* The boot disk determines the operating system of your machine. In this class we will be using Ubuntu 20.04 generally is a good choice, but there are many good alternatives.
 
 
 ### SSH into server via the web interface
@@ -214,36 +213,27 @@ By clicking on "ssh" you can enter the server directly and interact with it just
 Remember that GCP provides us with servers in the most bare format. This means that only a few very basic programs are installed.
 
 The ubuntu version that we get does not necessarily have to be the latest version. Newer versions might contain updates making the server faster or securer. We can update to the newest version by running two commands
-<br>
-`sudo apt-get update` - downloads the updates <br>
+
+`sudo apt-get update` - downloads the updates
+
 `sudo apt update` - installs the updates
 
-We can also combine two commands in the command line using "&&" like this: <br>
+We can also combine two commands in the command line using "&&" like this:
+
 `sudo apt-get update && sudo apt update`
-
-Updating your server when you start it isn't necessary, but its a good habit.
-
-### Upgrading to Python 3.8 on Ubuntu
-To upgrade Python run these commands
-
-```
-sudo add-apt-repository ppa:deadsnakes/ppa
-
-sudo apt update
-
-sudo apt install python3.8
-
-# to use python3.8 as the default run
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
-```
 
 
 #### Installing pip
+
 `sudo apt install python3-pip` - download and install pip
-<br>
+
 `pip3 --version` - check that everything works
-<br>
-`pip3 install flask` - install packages, in this case flask
+
+`sudo pip3 install flask` - install packages, in this case flask
+
+### Important Note on installing python packages on a server
+
+If you install python packages with `pip3 install <package-name>` then these WILL work when you run your script with `python3 main.py` but won't be found when you run `sudo python3 main.py`. To avoid this you can install all packages `sudo pip3 install <package-name>`. This technically has some [security risks](https://askubuntu.com/questions/802544/is-sudo-pip-install-still-a-broken-practice) but close to all of the packages you will be using are big projects backed by a community of trusted open-source developers so this should not be an issue. You do not need and should not install python packages with sudo on your own computer.
 
 
 ### Firewalls and networking
@@ -396,5 +386,3 @@ You can create scripts that run automatically when a server is started. These sc
 You can add the start-up script via copy paste by opening the toggle menu "Management, security, disks, networking, sole tenancy" when creating a new virtual machine. Alternatively you can link to a start-up script stored in a google cloud storage folder.
 
 See the file `start-up-script.sh` for an example of what such a file could look like
-
-<img src="https://jirasupport.files.wordpress.com/2019/10/docker_logo.png" alt="docker" width="200" align="right"/>

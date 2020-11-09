@@ -126,12 +126,6 @@ Besides the method we covered so far, we can connect to a database by using the 
 
 Lets have a look at this in `Code/4-sql`
 
-## BigQuery
-BigQuery is a large-scale data warehouse for analysis of petabytes of data. It has a SQL like syntax which makes it very easy to work with!
-
-https://www.qwiklabs.com/focuses/2802?parent=catalog
-
-
 ### Further resources on SQL
 
 * [W3 Schools SQL Tutorial](https://www.w3schools.com/sql/sql_intro.asp)
@@ -139,4 +133,47 @@ https://www.qwiklabs.com/focuses/2802?parent=catalog
 
 
 ## Qwiklabs
-https://www.qwiklabs.com/focuses/3563?parent=catalogt
+Qwiklabs provides lab learning environments that help you get hands-on experience working with GCP, but without having to use your own account. Qwiklabs temporarily provides a GCP account which you can use for one of their many tutorials, e.g. on how to set up a server, how create a database, use the machine learning APIs and much more. We received free credits in the course of the Google Education programme, so you can effectively use the service for free.
+
+If you have not yet, please provide me with the email you have signed up with to Qwiklabs - if not do so first - and I can add you to our classroom group.
+
+Do this tutorial as a first intro to the platform (unless you already did this in class):
+
+[Qwiklabs: Introduction to SQL for BigQuery and Cloud SQL](https://www.qwiklabs.com/focuses/2802?parent=catalog)
+
+If you like, also have a look at this one:
+
+[Qwiklabs: Creating a virtual machine](https://www.qwiklabs.com/focuses/3563?parent=catalog)
+
+## Data Studio
+Link to Data Studio: https://datastudio.google.com
+
+
+![Google Data Studio Screenshot 1](https://kasatria.vn/wp-content/uploads/2019/04/google-data-studio-img.png)
+
+
+
+Data Studio is a simple dashboarding tool that you can use to visualise data in sql database, google sheets, manually uploaded CSVs, and many other data sources. What makes it particularly interesting is its ability to integrate it into your flask application itself.
+
+#### How to connect Data Studio to you PostgreSQL database
+1. When in a new report, click "add resource"
+1. Select PostgreSQL by Google
+    1. **Hostname:** The ip address of your SQL server, you can get this from the servers profile in GCP
+    1. **Port:** Leave this blank
+    1. **Database:** the name of the database you want to connect to. You can see all databases when you go to your SQL server's page and click "databases" on the left
+    1. **Username:** You can use "postgres" which is the default username of the server, unless you created a new user manually
+    1. **Password:** The password that you entered when you created the SQL database - provided you are trying to log in with the postgres user account. You can change the password of a user if on your SQL server page you go to "users" and click on the three vertical dots of your user names and then on "change password
+1. You SQL database needs to allow traffic coming from data studios servers. To allow this, add the possible IP addresses (found here:
+IP addresses: https://support.google.com/datastudio/answer/7088031?hl=en) to the whitelisted IP addresses of your server in gcp, by going to the "connections" page of your server and adding them one by one
+1. Lastly, choose the table in your database you want to use for the dashboard
+
+
+#### How to embed a Data Studio into your flask application
+
+1. In your report, click on "file" and "Embed report"
+1. Copy the code in the pop-up. If you like you can customise the width and height at which the report will be displayed later, but you can also change this manually in the code later.
+1. In your Flask app, go to the html file in which you want to include the report and paste in the code.
+1. Your embedded report will only be viewable by people who are logged in with their google account and have access to your report. You can invite other people to the report by clicking "share" in the top right of your report in data studio. By clicking on "manage access" in the sharing pop-up, you can change the sharing settings to "anyone with the link can view" if you want your report to be generally accessible.
+1. (Optionally) Run your flask and see how the report looks. You may want to adjust the width and height. You can also just adjust one value (e.g. width) and delete the other (e.g. height) for the report to automatically maintain its aspect ratio
+
+Have a look at `Code/5-datastudio` to see how embedding can look like

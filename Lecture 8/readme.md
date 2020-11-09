@@ -211,13 +211,14 @@ Exercise to do at home:
 1. When the import is ready, click on Train and then on "start training". Give your model a name and keep "cloud hosted" selected
 1. Click on "models" in the AutoML menu on the left.
 1. Click on your model. You can view some statistics on how the training went. When you're done inspecting the metrics go to "Test % Use" and deploy the model
-1.
+
 
 
 ### Exercise
 Create your own image classifier with AutoML and query it as an API with Python
 
 
+<img src="https://jirasupport.files.wordpress.com/2019/10/docker_logo.png" alt="docker" width="200" align="right"/>
 
 ### Docker
 
